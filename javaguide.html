@@ -998,6 +998,46 @@ If all class members are static, the class should be set to <code class="prettyp
   <li>Low chance of code being used in the future ("You aren't gonna need it"). If necessary, it can recovered through source control.</li>
 </ol>
 
+<h3 id="s6.6-utils-classes">6.6 Avoid nesting</h3>
+
+<p>Prefer multiple return points over nested code to improve readability. It is easier to follow code paths when nesting is reduced, and is more maintainable.</p>
+
+<pre class="prettyprint lang-java">
+
+  // Good.
+  public static void foo(Integer bar) {
+
+    if (bar == null) {
+      return;
+    }
+
+    // Do stuff
+    if (baz == null) {
+      return;
+    }
+
+    // Do more stuff
+
+  }
+
+  // Bad!
+  public static void foo(Integer bar, Integer baz) {
+
+    if (bar != null) {
+      // Do stuff
+      if (baz != null) {
+        // Do more stuff
+      }
+    }
+
+  }
+
+</pre>
+
+<h3 id="s6.7-utils-classes">6.7 Method complexity</h3>
+
+TODO
+
 <a name="javadoc"></a>
 <h2 id="s7-javadoc">7 Javadoc</h2>
 
