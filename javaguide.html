@@ -992,10 +992,18 @@ Foo.aStaticMethod(); // good
 
 If all class members are static, the class should be set to <code class="prettyprint">abstract</code>.
 
+<h3 id="s6.5-unused-code">6.5 Remove unused code</h3>
+
+<p>Unused (i.e. no references) and commented-out code should be removed.</p>
+
+<ol>
+  <li>Makes it more difficult for new developers to understand the codebase.</li>
+  <li>Contributes to maintenance burden (e.g. merging changes).</li>
+  <li>Low chance of code being used in the future ("You aren't gonna need it"). If necessary, it can recovered through source control.</li>
+</ol>
+
 <a name="javadoc"></a>
 <h2 id="s7-javadoc">7 Javadoc</h2>
-
-
 
 <h3 id="s7.1-javadoc-formatting">7.1 Formatting</h3>
 
