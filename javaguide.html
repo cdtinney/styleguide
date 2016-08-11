@@ -220,14 +220,11 @@ order</strong>, which its maintainer could explain if asked. For example, new me
 just habitually added to the end of the class, as that would yield "chronological by date
 added" ordering, which is not a logical ordering.</p>
 
-
-
 <a name="overloads"></a>
 <h5 id="s3.4.2.1-overloads-never-split">3.4.2.1 Overloads: never split</h5>
 
 <p>When a class has multiple constructors, or multiple methods with the same name, these appear
 sequentially, with no intervening members (not even private ones).</p>
-
 
 <h2 id="s4-formatting">4 Formatting</h2>
 
@@ -430,7 +427,7 @@ previous lines.</p>
   </li>
 
   <li>Between statements, <em>as needed</em> to organize the code into logical subsections.
-  
+
   </li><li><em>Optionally</em> before the first member or after the last member of the class (neither
   encouraged nor discouraged).</li>
 
@@ -724,7 +721,7 @@ Section 7, <a href="#s7-javadoc">Javadoc</a>.</p>
 re-wrap the lines when necessary (paragraph-style). Most formatters don't re-wrap lines in
 <code class="prettyprint lang-java">// ...</code> style comment blocks.</p>
 
- 
+
 
 <a name="modifiers"></a>
 <h4 id="s4.8.7-modifiers">4.8.7 Modifiers</h4>
@@ -962,7 +959,7 @@ method.</p>
 <h3 id="s6.2-caught-exceptions">6.2 Caught exceptions: not ignored</h3>
 
 <p>Except as noted below, it is very rarely correct to do nothing in response to a caught
-exception. (Typical responses are to log it, or if it is considered "impossible", rethrow it as an
+exception. (Typical responses are to <b>log</b> it, or if it is considered "impossible", rethrow it as an
 <code class="prettyprint lang-java">AssertionError</code>.)</p>
 
 <p>When it truly is appropriate to take no action whatsoever in a catch block, the reason this is
@@ -971,22 +968,13 @@ justified is explained in a comment.</p>
 <pre class="prettyprint lang-java">try {
   int i = Integer.parseInt(response);
   return handleNumericResponse(i);
+
 } catch (NumberFormatException ok) {
-  // it's not numeric; that's fine, just continue
+  // It's not numeric; that's fine, just continue.
+
 }
 return handleTextResponse(response);
-</pre>
 
-<p class="exception"><strong>Exception:</strong> In tests, a caught exception may be ignored
-without comment <em>if</em> its name is or begins with <code class="prettyprint lang-java">expected</code>. The
-following is a very common idiom for ensuring that the code under test <em>does</em> throw an
-exception of the expected type, so a comment is unnecessary here.</p>
-
-<pre class="prettyprint lang-java">try {
-  emptyStack.pop();
-  fail();
-} catch (NoSuchElementException expected) {
-}
 </pre>
 
 <h3 id="s6.3-static-members">6.3 Static members: qualified using class</h3>
@@ -1000,19 +988,9 @@ Foo.aStaticMethod(); // good
 <span class="badcode">somethingThatYieldsAFoo().aStaticMethod();</span> // very bad
 </pre>
 
-<a name="finalizers"></a>
-<h3 id="s6.4-finalizers">6.4 Finalizers: not used</h3>
+<h3 id="s6.4-utils-classes">6.4 Utility classes</h3>
 
-<p>It is <strong>extremely rare</strong> to override <code class="prettyprint
-lang-java">Object.finalize</code>.</p>
-
-<p class="tip"><strong>Tip:</strong> Don't do it. If you absolutely must, first read and understand
-
-
-  <a href="http://books.google.com/books?isbn=8131726592"><em>Effective Java</em></a>
-
-Item 7, "Avoid Finalizers," very carefully, and <em>then</em> don't do it.</p>
-
+If all class members are static, the class should be set to <code class="prettyprint">abstract</code>.
 
 <a name="javadoc"></a>
 <h2 id="s7-javadoc">7 Javadoc</h2>
@@ -1072,7 +1050,7 @@ punctuated as if it were a complete sentence.</p>
 <code class="badcode">/** @return the customer ID */</code>. This is incorrect, and should be
 changed to <code class="prettyprint lang-java">/** Returns the customer ID. */</code>.</p>
 
-<a name="s7.3.3-javadoc-optional"></a> 
+<a name="s7.3.3-javadoc-optional"></a>
 <h3 id="s7.3-javadoc-where-required">7.3 Where Javadoc is used</h3>
 
 <p>At the <em>minimum</em>, Javadoc is present for every
@@ -1115,9 +1093,9 @@ class or member, that comment is written as Javadoc instead (using <code>/**</co
 <p>Non-required Javadoc is not strictly required to follow the formatting rules of Sections
 7.1.2, 7.1.3, and 7.2, though it is of course recommended.</p>
 
- 
 
-</div> 
+
+</div>
 </div>
 </body>
 </html>

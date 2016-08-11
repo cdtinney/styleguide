@@ -1,4 +1,4 @@
-Google Style Guides
+Google Style Guides (original README)
 ===================
 
 Every major open-source project has its own style guide: a set of conventions
