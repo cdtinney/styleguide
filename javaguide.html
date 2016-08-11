@@ -1003,7 +1003,6 @@ If all class members are static, the class should be set to <code class="prettyp
 <p>Prefer multiple return points over nested code to improve readability. It is easier to follow code paths when nesting is reduced, and is more maintainable.</p>
 
 <pre class="prettyprint lang-java">
-
   // Good.
   public static void foo(Integer bar) {
 
@@ -1031,7 +1030,30 @@ If all class members are static, the class should be set to <code class="prettyp
     }
 
   }
+</pre>
 
+Another example...
+
+<pre class="prettyprint lang-js">
+  // Bad!
+  SomeObject.get(_id, function(response)) {
+
+    if (response != SUCCESS) {
+      return;
+    }
+
+    // Do stuff
+
+  }
+
+  // Bad!
+  SomeObject.get(_id, function(response)) {
+
+    if (response == SUCCESS) {
+      // Do stuff
+    }
+
+  }
 </pre>
 
 <h3 id="s6.7-utils-classes">6.7 Method complexity</h3>
