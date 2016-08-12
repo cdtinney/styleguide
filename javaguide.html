@@ -54,7 +54,7 @@ code. Optional formatting choices made in examples should not be enforced as rul
 <h3 id="s2.1-file-name">2.1 File name</h3>
 
 <p>The source file name consists of the case-sensitive name of the top-level class it contains
-(of which there is <a href="#s3.4.1-one-top-level-class">exactly one</a>), plus the
+(of which there is <a href="#s3.3.1-one-top-level-class">exactly one</a>), plus the
 <code>.java</code> extension.</p>
 
 <h3 id="s2.2-special-characters">2.2 Special characters</h3>
@@ -68,7 +68,7 @@ anywhere in a source file. This implies that:</p>
 <ol>
   <li>All other whitespace characters in string and character literals are escaped.</li>
 
-  <li>Tab characters are <strong>not</strong> used for indentation.</li>
+  <li><strong>Tab characters are not used for indentation.</strong></li>
 </ol>
 
 <h4 id="s2.2.2-special-escape-sequences">2.2.2 Special escape sequences</h4>
@@ -147,7 +147,6 @@ programs are <strong>broken</strong> and they must be <strong>fixed</strong>.</p
 <p>A source file consists of, <strong>in order</strong>:</p>
 
 <ol>
-  <li>License or copyright information, if present</li>
   <li>Package statement</li>
   <li>Import statements</li>
   <li>Exactly one top-level class</li>
@@ -156,31 +155,25 @@ programs are <strong>broken</strong> and they must be <strong>fixed</strong>.</p
 
 <p><strong>Exactly one blank line</strong> separates each section that is present.</p>
 
-<h3 id="s3.1-copyright-statement">3.1 License or copyright information, if present</h3>
-
-<p>If license or copyright information belongs in a file, it belongs here.</p>
-
-
-
-<h3 id="s3.2-package-statement">3.2 Package statement</h3>
+<h3 id="s3.1-package-statement">3.1 Package statement</h3>
 
 <p>The package statement is <strong>not line-wrapped</strong>. The column limit (Section 4.4,
 <a href="#s4.4-column-limit">Column limit: 120</a>) does not apply to package statements.</p>
 
 <a name="imports"></a>
-<h3 id="s3.3-import-statements">3.3 Import statements</h3>
+<h3 id="s3.2-import-statements">3.2 Import statements</h3>
 
-<h4 id="s3.3.1-wildcard-imports">3.3.1 No wildcard imports</h4>
+<h4 id="s3.2.1-wildcard-imports">3.2.1 No wildcard imports</h4>
 
 <p><strong>Wildcard imports</strong>, static or otherwise, <strong>are not used</strong>.</p>
 
-<h4 id="s3.3.2-import-line-wrapping">3.3.2 No line-wrapping</h4>
+<h4 id="s3.2.2-import-line-wrapping">3.2.2 No line-wrapping</h4>
 
 <p>Import statements are <strong>not line-wrapped</strong>. The column limit (Section 4.4,
 <a href="#s4.4-column-limit">Column limit: 120</a>) does not apply to import
 statements.</p>
 
-<h4 id="s3.3.3-import-ordering-and-spacing">3.3.3 Ordering and spacing</h4>
+<h4 id="s3.2.3-import-ordering-and-spacing">3.2.3 Ordering and spacing</h4>
 
 <p>Imports are ordered as follows:</p>
 
@@ -198,14 +191,14 @@ sorts before ';'.)</p>
 
 
 
-<h3 id="s3.4-class-declaration">3.4 Class declaration</h3>
+<h3 id="s3.3-class-declaration">3.3 Class declaration</h3>
 
 <a name="oneclassperfile"></a>
-<h4 id="s3.4.1-one-top-level-class">3.4.1 Exactly one top-level class declaration</h4>
+<h4 id="s3.3.1-one-top-level-class">3.3.1 Exactly one top-level class declaration</h4>
 
 <p>Each top-level class resides in a source file of its own.</p>
 
-<h4 id="s3.4.2-class-member-ordering">3.4.2 Class member ordering</h4>
+<h4 id="s3.3.2-class-member-ordering">3.3.2 Class member ordering</h4>
 
 <p>The ordering of the members of a class can have a great effect on learnability, but there is
 no single correct recipe for how to do it. Different classes may order their members
@@ -217,7 +210,7 @@ just habitually added to the end of the class, as that would yield "chronologica
 added" ordering, which is not a logical ordering.</p>
 
 <a name="overloads"></a>
-<h5 id="s3.4.2.1-overloads-never-split">3.4.2.1 Overloads: never split</h5>
+<h5 id="s3.3.2.1-overloads-never-split">3.3.2.1 Overloads: never split</h5>
 
 <p>When a class has multiple constructors, or multiple methods with the same name, these appear
 sequentially, with no intervening members (not even private ones).</p>
@@ -332,7 +325,7 @@ Section 4.5, <a href="#s4.5-line-wrapping">Line-wrapping</a>.
   <li><code class="prettyprint lang-java">package</code> and
   <code class="prettyprint lang-java">import</code> statements (see Sections
   3.2 <a href="#s3.2-package-statement">Package statement</a> and
-  3.3 <a href="#s3.3-import-statements">Import statements</a>).</li>
+  3.2 <a href="#s3.2-import-statements">Import statements</a>).</li>
 
   <li>Command lines in a comment that may be cut-and-pasted into a shell.</li>
 </ol>
@@ -428,8 +421,8 @@ previous lines.</p>
   encouraged nor discouraged).</li>
 
   <li>As required by other sections of this document (such as Section 3,
-  <a href="#s3-source-file-structure">Source file structure</a>, and Section 3.3,
-  <a href="#s3.3-import-statements">Import statements</a>).</li>
+  <a href="#s3-source-file-structure">Source file structure</a>, and Section 3.2,
+  <a href="#s3.2-import-statements">Import statements</a>).</li>
 </ol>
 
 <p><em>Multiple</em> consecutive blank lines are permitted, but never required (or encouraged).</p>
@@ -465,8 +458,6 @@ Javadoc, a single ASCII space also appears in the following places <strong>only<
   <li>On both sides of any binary or ternary operator. This also applies to the following
   "operator-like" symbols:
   <ul>
-    <li>the ampersand in a conjunctive type bound:
-    <code class="prettyprint lang-java">&lt;T extends Foo &amp; Bar&gt;</code></li>
 
     <li>the pipe for a catch block that handles multiple exceptions:
     <code class="prettyprint lang-java">catch (FooException | BarException e)</code></li>
@@ -1116,7 +1107,7 @@ punctuated as if it were a complete sentence.</p>
 <code class="badcode">/** @return the customer ID */</code>. This is incorrect, and should be
 changed to <code class="prettyprint lang-java">/** Returns the customer ID. */</code>.</p>
 
-<a name="s7.3.3-javadoc-optional"></a>
+<a name="s7.3.2-javadoc-optional"></a>
 <h3 id="s7.3-javadoc-where-required">7.3 Where Javadoc is used</h3>
 
 <p>At the <em>minimum</em>, Javadoc is present for every
@@ -1125,8 +1116,8 @@ changed to <code class="prettyprint lang-java">/** Returns the customer ID. */</
 <code class="prettyprint lang-java">protected</code> member of such a class, with a few exceptions
 noted below.</p>
 
-<p>Additional Javadoc content may also be present, as explained in Section 7.3.4,
-<a href="#s7.3.4-javadoc-non-required">Non-required Javadoc</a>.</p>
+<p>Additional Javadoc content may also be present, as explained in Section 7.3.3,
+<a href="#s7.3.3-javadoc-non-required">Non-required Javadoc</a>.</p>
 
 <h4 id="s7.3.1-javadoc-exception-self-explanatory">7.3.1 Exception: self-explanatory methods</h4>
 
@@ -1149,7 +1140,7 @@ what the term "canonical name" means!</p>
 
 
 
-<h4 id="s7.3.4-javadoc-non-required">7.3.4 Non-required Javadoc</h4>
+<h4 id="s7.3.3-javadoc-non-required">7.3.3 Non-required Javadoc</h4>
 
 <p>Other classes and members have Javadoc <em>as needed or desired</em>.
 
@@ -1159,6 +1150,8 @@ class or member, that comment is written as Javadoc instead (using <code>/**</co
 <p>Non-required Javadoc is not strictly required to follow the formatting rules of Sections
 7.1.2, 7.1.3, and 7.2, though it is of course recommended.</p>
 
+<a name="Localization"></a>
+<h2 id="s8-localization">8 Localization</h2>
 
 
 </div>
