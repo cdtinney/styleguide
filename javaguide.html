@@ -1067,9 +1067,23 @@ As a last resort, add ‘SupressWarnings’ annotations to methods to reduce clu
 
 <h3 id="s6.10-logging">6.10 Logging</h3>
 
-<h3 id="6.10-1-parameterized-messages">6.10.1 Parameterized messages</h3>
+<h4 id="s6.10-1-parameterized-messages">6.10.1 Parameterized messages</h4>
 
-<p>TODO</p>
+<p>Avoid concatenating strings manually when creating log messages as it decreases readability.
+Instead, use parameters; this results in a trivial performance decrease when the specified level is enabled,
+but will result in a performance increase when the specified logging level is disabled since no string will be built.
+
+<p>Additionally, using parameters reduces the need to call <code>LOG.isDebugEnabled()</code>.</p>
+
+<p>Unfortunately, SLF4J < 1.7 only supports two parameterized variables.</p>
+
+<pre class="prettyprint lang-java">
+  // Good.
+  LOG.debug("Scheduling next update for AP Search Feed {} in {} seconds", feed.getName(), interval);
+
+  // Not as good.
+  LOG.debug("Scheduling next update for AP Search Feed " + feed.getName() + " in " + interval + " seconds");
+</pre>
 
 <h3 id="s6.11-logging">6.12 D.R.Y.</h3>
 
