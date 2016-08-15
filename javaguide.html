@@ -365,6 +365,10 @@ without the need to line-wrap.</p>
     </ul>
   </li>
 
+  <pre class="prettyprint lang-java">
+    TODO - Example
+  </pre>
+
   <li>When a line is broken at an <em>assignment</em> operator the break typically comes
   <em>after</em> the symbol, but either way is acceptable.
     <ul>
@@ -373,11 +377,24 @@ without the need to line-wrap.</p>
     </ul>
   </li>
 
+  <pre class="prettyprint lang-java">
+    TODO - Example
+  </pre>
+
   <li>A method or constructor name stays attached to the open parenthesis
   (<code class="prettyprint lang-java">(</code>) that follows it.</li>
 
+  <pre class="prettyprint lang-java">
+    TODO - Example
+  </pre>
+
   <li>A comma (<code class="prettyprint lang-java">,</code>) stays attached to the token that
   precedes it.</li>
+
+  <pre class="prettyprint lang-java">
+    TODO - Example
+  </pre>
+
 </ol>
 
 <p class="note"><strong>Note:</strong> The primary goal for line wrapping is to have clear
@@ -1080,11 +1097,18 @@ but will result in a performance increase when the specified logging level is di
   LOG.debug("Scheduling next update for AP Search Feed " + feed.getName() + " in " + interval + " seconds");
 </pre>
 
-<h3 id="s6.11-logging">6.12 D.R.Y.</h3>
+<h4 id="s6.10-2-print-stack-trace">6.10.2 Do not print stack trace</h4>
+
+<p>Avoid printing the stack trace using <code>e.printStackTrace()</code>. Use the logging framework
+  instead for greater flexibility and more descriptive logging, for example:</p>
+
+<pre class="prettyprint lang-java">LOG.error("Some message", e)</pre>
+
+<h3 id="s6.11-dry">6.12 D.R.Y.</h3>
 
 <p>TODO</p>
 
-<h3 id="s6.12-logging">6.12 S.O.L.I.D.</h3>
+<h3 id="s6.12-solid">6.12 S.O.L.I.D.</h3>
 
 <p>TODO</p>
 
