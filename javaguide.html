@@ -1017,7 +1017,7 @@ Additionally, refactoring will likely present opportunities for code reuse.</p>
     }
 
     // Do stuff
-    if (baz == null) {
+    if (baz == null || baz.test == null) {
       return;
     }
 
@@ -1032,6 +1032,9 @@ Additionally, refactoring will likely present opportunities for code reuse.</p>
       // Do stuff
       if (baz != null) {
         // Do more stuff
+        if (baz.test != null) {
+          // Do even more stuff
+        }
       }
     }
 
@@ -1041,7 +1044,7 @@ Additionally, refactoring will likely present opportunities for code reuse.</p>
 Another example...
 
 <pre class="prettyprint lang-js">
-  // Bad!
+  // Good.
   SomeObject.get(_id, function(response)) {
 
     if (response != SUCCESS) {
@@ -1057,6 +1060,14 @@ Another example...
 
     if (response == SUCCESS) {
       // Do stuff
+      if (response.object != undefined) {
+        // Do more stuff
+        if (_foo) != undefined) {
+          // Do even more stuff.
+        }
+
+      }
+
     }
 
   }
