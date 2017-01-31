@@ -17,11 +17,14 @@
 
 <h2 id="s1-introduction">1 Introduction</h2>
 
-<p>This document serves as a modified definition of Google's coding standards for
-source code in the Java&#8482; Programming Language.</p>
+<p>This document serves as the <strong>complete</strong> definition of Google's coding standards for
+source code in the Java&#8482; Programming Language. A Java source file is described as being <em>in
+Google Style</em> if and only if it adheres to the rules herein.</p>
 
 <p>Like other programming style guides, the issues covered span not only aesthetic issues of
-formatting, but other types of conventions or coding standards/best practices as well.
+formatting, but other types of conventions or coding standards as well. However, this document
+focuses primarily on the <strong>hard-and-fast rules</strong> that we follow universally, and
+avoids giving <em>advice</em> that isn't clearly enforceable (whether by human or tool).
 </p>
 
 
@@ -157,25 +160,29 @@ programs are <strong>broken</strong> and they must be <strong>fixed</strong>.</p
 
 <p><strong>Exactly one blank line</strong> separates each section that is present.</p>
 
-<h3 id="s3.1-package-statement">3.1 Package statement</h3>
+<h3 id="s3.1-copyright-statement">3.1 License or copyright information, if present</h3>
+
+<p>If license or copyright information belongs in a file, it belongs here.</p>
+
+<h3 id="s3.2-package-statement">3.2 Package statement</h3>
 
 <p>The package statement is <strong>not line-wrapped</strong>. The column limit (Section 4.4,
 <a href="#s4.4-column-limit">Column limit: 120</a>) does not apply to package statements.</p>
 
 <a name="imports"></a>
-<h3 id="s3.2-import-statements">3.2 Import statements</h3>
+<h3 id="s3.3-import-statements">3.3 Import statements</h3>
 
-<h4 id="s3.2.1-wildcard-imports">3.2.1 No wildcard imports</h4>
+<h4 id="s3.3.1-wildcard-imports">3.3.1 No wildcard imports</h4>
 
 <p><strong>Wildcard imports</strong>, static or otherwise, <strong>are not used</strong>.</p>
 
-<h4 id="s3.2.2-import-line-wrapping">3.2.2 No line-wrapping</h4>
+<h4 id="s3.3.2-import-line-wrapping">3.3.2 No line-wrapping</h4>
 
 <p>Import statements are <strong>not line-wrapped</strong>. The column limit (Section 4.4,
 <a href="#s4.4-column-limit">Column limit: 120</a>) does not apply to import
 statements.</p>
 
-<h4 id="s3.2.3-import-ordering-and-spacing">3.2.3 Ordering and spacing</h4>
+<h4 id="s3.3.3-import-ordering-and-spacing">3.3.3 Ordering and spacing</h4>
 
 <p>Imports are ordered as follows:</p>
 
@@ -194,14 +201,14 @@ sorts before ';'.)</p>
 
 
 <h4 id="s3.3.4-import-class-not-static">3.3.4 No static import for classes</h4>
-
+4
 <p>Static import is not used for static nested classes. They are imported with
 normal imports.</p>
 
 <h3 id="s3.4-class-declaration">3.4 Class declaration</h3>
 
 <a name="oneclassperfile"></a>
-<h4 id="s3.3.1-one-top-level-class">3.3.1 Exactly one top-level class declaration</h4>
+<h4 id="s3.4.1-one-top-level-class">3.4.1 Exactly one top-level class declaration</h4>
 
 <p>Each top-level class resides in a source file of its own.</p>
 
