@@ -988,15 +988,15 @@ Foo.aStaticMethod(); // good
 
 <h3 id="s6.4-utils-classes">6.4 Utility classes</h3>
 
-If all class members are static, the class should be set to <code class="prettyprint">abstract</code>.
+If all class members are static, the class should be set to <code class="prettyprint">final</code> (to prevent sub-classing) and a private constructor should be created to prevent instantiation.
 
 <h3 id="s6.5-unused-code">6.5 Remove unused code</h3>
 
-<p>Unused (i.e. no references) and commented-out code should be removed.</p>
+<p>Unused (i.e. no references) and commented-out code should be removed for the following reasons:</p>
 
 <ol>
-  <li>Makes it more difficult for new developers to understand the codebase.</li>
-  <li>Contributes to maintenance burden (e.g. merging changes).</li>
+  <li>Makes it more difficult for newer developers to understand the codebase.</li>
+  <li>Contributes to maintenance costs (e.g. merging changes).</li>
   <li>Low chance of code being used in the future ("You aren't gonna need it"). If necessary, it can recovered through source control.</li>
 </ol>
 
@@ -1090,6 +1090,8 @@ As a last resort, add ‘SupressWarnings’ annotations to methods to reduce clu
 
 <h3 id="s6.10-logging">6.10 Logging</h3>
 
+<p>TODO</p>
+
 <h4 id="s6.10-1-parameterized-messages">6.10.1 Parameterized messages</h4>
 
 <p>Avoid concatenating strings manually when creating log messages as it decreases readability.
@@ -1118,6 +1120,8 @@ but will result in a performance increase when the specified logging level is di
 <h3 id="s6.11-dry">6.12 D.R.Y.</h3>
 
 <p>TODO</p>
+
+<p><b>Avoid copy/paste.</b></p>
 
 <h3 id="s6.12-solid">6.12 S.O.L.I.D.</h3>
 
